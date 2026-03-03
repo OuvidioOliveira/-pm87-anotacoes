@@ -130,7 +130,7 @@ def gerar_dados():
         for cls in range(1, 9):
             criterios.append({
                 "FACTOR_ID": fid,
-                "DESCRICAO_FACTOR": fdesc,
+                "DESCRICAO_DO_FACTOR": fdesc,
                 "CLASSIFICACAO": cls,
                 "DESCRICAO_CRITERIO": descricoes_por_factor[fid][cls - 1],
                 "NIVEL_RISCO": "Sem Classificação" if cls == 9
@@ -167,7 +167,7 @@ def gerar_dados():
                 classifs.append({
                     "CLIENTE_ID": cliente["CLIENTE_ID"],
                     "FACTOR_ID": factor["FACTOR_DE_RISCO"],
-                    "DESCRICAO_FACTOR": factor["DESCRICAO_FACTOR"],
+                    "DESCRICAO_FACTOR": factor["DESCRICAO_DO_FACTOR"],
                     "CLASSIFICACAO": drift,
                     "TRIMESTRE": t.strftime("%Y-T%q"),
                     "DATA": t,
@@ -537,4 +537,3 @@ st.plotly_chart(fig7, use_container_width=True)
 # ─────────────────────────────────────────────
 st.markdown("---")
 st.caption("🏦 Moza Banco · Dashboard de Risco KYC/AML · Dados gerados para demonstração · © 2025")
-
